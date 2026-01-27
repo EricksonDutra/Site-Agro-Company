@@ -1,0 +1,28 @@
+// Abstracts
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+// Root variables para CSS nativo
+:root {
+  --color-primary: #{variables.$color-primary};
+  --color-secondary: #{variables.$color-secondary};
+  --color-accent: #{variables.$color-accent};
+}
+
+// Estilos globais
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: variables.$font-primary;
+  line-height: 1.6;
+  color: variables.$color-dark;
+}
