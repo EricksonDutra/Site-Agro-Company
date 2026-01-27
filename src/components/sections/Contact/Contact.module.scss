@@ -1,0 +1,169 @@
+@use '../../styles/variables' as *;
+
+.contact {
+  @include section-padding;
+  background: $white;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-3xl;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 1.2fr;
+    gap: $spacing-4xl;
+  }
+}
+
+// Info Section
+.info {
+  h2 {
+    color: $green-dark;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: $gold;
+  margin-bottom: $spacing-lg;
+  border-radius: $radius-full;
+}
+
+.subtitle {
+  color: $gray-dark;
+  margin-bottom: $spacing-2xl;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+
+  .icon {
+    font-size: $font-size-xl;
+    flex-shrink: 0;
+  }
+
+  strong {
+    display: block;
+    color: $green-dark;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-xs;
+  }
+
+  p {
+    color: $gray-dark;
+    font-size: $font-size-sm;
+    margin: 0;
+
+    a {
+      color: $gray-dark;
+      transition: color $transition-normal;
+
+      &:hover {
+        color: $gold-dark;
+      }
+    }
+  }
+}
+
+// Form Section
+.form {
+  background: $ivory;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl;
+  }
+}
+
+.formGroup {
+  margin-bottom: $spacing-lg;
+
+  label {
+    display: block;
+    color: $green-dark;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-sm;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: $spacing-md;
+    background: $white;
+    border: 2px solid $gray-light;
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    color: $text-dark;
+    transition: all $transition-normal;
+
+    &::placeholder {
+      color: $gray-medium;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $gold;
+      box-shadow: 0 0 0 3px rgba($gold, 0.15);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .formGroup {
+    margin-bottom: 0;
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  padding: $spacing-md $spacing-xl;
+  background: $green-dark;
+  color: $white;
+  font-family: $font-body;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-normal;
+  margin-top: $spacing-md;
+
+  &:hover:not(:disabled) {
+    background: $green-dark-2;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
