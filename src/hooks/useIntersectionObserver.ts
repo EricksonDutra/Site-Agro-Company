@@ -5,7 +5,7 @@ interface UseIntersectionObserverOptions {
   rootMargin?: string;
   triggerOnce?: boolean;
 }
-
+//
 export function useIntersectionObserver<T extends HTMLElement>(
   options: UseIntersectionObserverOptions = {}
 ) {
