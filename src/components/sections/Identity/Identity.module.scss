@@ -1,0 +1,119 @@
+@use '../../styles/variables' as *;
+
+.services {
+  @include section-padding;
+  background: $green-dark;
+  position: relative;
+
+  // Diagonal top edge
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: $green-dark;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  color: $white;
+  margin-bottom: $spacing-md;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: $gold;
+  margin: 0 auto $spacing-3xl;
+  border-radius: $radius-full;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: rgba($white, 0.05);
+  border: 1px solid rgba($white, 0.1);
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  text-align: center;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: rgba($white, 0.1);
+    border-color: $gold;
+    transform: translateY(-4px);
+
+    .iconWrapper {
+      background: $gold;
+      color: $green-dark;
+    }
+  }
+
+  h3 {
+    color: $gold;
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: rgba($white, 0.8);
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+  }
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto $spacing-lg;
+  background: rgba($gold, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $gold;
+  transition: all $transition-normal;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.list {
+  list-style: none;
+  text-align: left;
+
+  li {
+    color: rgba($white, 0.8);
+    font-size: $font-size-sm;
+    padding: $spacing-xs 0;
+    padding-left: $spacing-lg;
+    position: relative;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $gold;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
