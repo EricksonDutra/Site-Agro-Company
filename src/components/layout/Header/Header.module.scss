@@ -1,0 +1,105 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: $spacing-md 0;
+  transition: all $transition-normal;
+  background-color: transparent;
+
+  &.scrolled {
+    background-color: rgba($color-white, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.container {
+  @include container;
+  @include flex-between;
+}
+
+.logo {
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+.nav {
+  @include mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: $color-white;
+    box-shadow: $shadow-lg;
+    transition: right $transition-normal;
+    padding-top: 80px;
+
+    &.open {
+      right: 0;
+    }
+  }
+}
+
+.navList {
+  display: flex;
+  gap: $spacing-xl;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include mobile {
+    flex-direction: column;
+    padding: $spacing-lg;
+    gap: $spacing-lg;
+  }
+
+  a {
+    color: $color-dark;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color $transition-fast;
+    position: relative;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-primary;
+      transition: width $transition-normal;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  color: $color-dark;
+
+  @include mobile {
+    display: block;
+    z-index: 1001;
+  }
+}
