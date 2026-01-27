@@ -1,0 +1,232 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+// Background Slides
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition:
+    opacity 1s ease,
+    transform 6s ease;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Gradient Overlay
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba($green-dark, 0.92) 0%,
+    rgba($green-dark, 0.75) 50%,
+    rgba($green-dark, 0.4) 100%
+  );
+
+  @media (min-width: $breakpoint-lg) {
+    background: linear-gradient(
+      to bottom,
+      rgba($green-dark, 0.92) 0%,
+      rgba($green-dark, 0.7) 40%,
+      transparent 80%
+    );
+  }
+}
+
+// Content Container
+.content {
+  position: relative;
+  z-index: 10;
+  padding-top: 100px;
+  padding-bottom: $spacing-3xl;
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 120px;
+  }
+}
+
+// Text Wrapper with Animation
+.textWrapper {
+  animation: fadeInUp 0.8s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  color: $white;
+  font-size: $font-size-xl;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.divider {
+  width: 160px;
+  height: 3px;
+  background: $gold;
+  margin-bottom: $spacing-lg;
+  border-radius: $radius-full;
+}
+
+.description {
+  color: rgba($white, 0.85);
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-xl;
+  max-width: 550px;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-xl;
+  background: $gold;
+  color: $green-dark;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  border-radius: $radius-md;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: $gold-light;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba($gold, 0.3);
+  }
+
+  &::after {
+    content: '→';
+    transition: transform $transition-normal;
+  }
+
+  &:hover::after {
+    transform: translateX(4px);
+  }
+}
+
+// Slide Indicators
+.indicators {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-2xl;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba($white, 0.3);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: rgba($white, 0.5);
+  }
+
+  &.active {
+    background: $gold;
+    border-color: $gold;
+    transform: scale(1.2);
+  }
+}
+
+// Scroll Indicator
+.scrollIndicator {
+  position: absolute;
+  bottom: $spacing-xl;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  color: rgba($white, 0.6);
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: bounce 2s infinite;
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba($white, 0.4);
+  border-radius: 12px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: $gold;
+  border-radius: $radius-full;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+}
