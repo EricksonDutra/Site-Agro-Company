@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import styles from './Hero.module.scss';
-import { HERO_SLIDES } from '@/lib/constants';
+import { HERO_SLIDES } from '@/constants';
 
 interface Slide {
   id: number;
@@ -55,11 +55,11 @@ export default function Hero() {
 
       {/* Content */}
       <div className={`container ${styles.content}`}>
-        <div className={styles.textWrapper} key={currentSlide.id}>
-          <span className={styles.subtitle}>{currentSlide.subtitle}</span>
-          <h1 className={styles.title}>{currentSlide.title}</h1>
+        <div className={styles.textWrapper} key={currentSlide!.id}>
+          <span className={styles.subtitle}>{currentSlide!.subtitle}</span>
+          <h1 className={styles.title}>{currentSlide!.title}</h1>
           <div className={styles.divider} />
-          <p className={styles.description}>{currentSlide.description}</p>
+          <p className={styles.description}>{currentSlide!.description}</p>
           <a href="#contact" className={styles.cta}>
             Fale com um especialista
           </a>

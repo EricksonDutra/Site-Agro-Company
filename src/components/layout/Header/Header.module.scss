@@ -1,5 +1,5 @@
-@use '@styles/variables' as *;
-@use '@styles/mixins' as *;
+@use '@styles/abstracts/_variables' as *;
+@use '@styles/abstracts/_mixins' as *;
 
 .header {
   position: fixed;
@@ -12,7 +12,7 @@
   background-color: transparent;
 
   &.scrolled {
-    background-color: rgba($color-white, 0.95);
+    background-color: rgba($white, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: $shadow-md;
   }
@@ -38,7 +38,7 @@
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background-color: $color-white;
+    background-color: $white;
     box-shadow: $shadow-lg;
     transition: right $transition-normal;
     padding-top: 80px;
@@ -63,14 +63,14 @@
   }
 
   a {
-    color: $color-dark;
+    color: $green-dark;
     text-decoration: none;
     font-weight: 500;
     transition: color $transition-fast;
     position: relative;
 
     &:hover {
-      color: $color-primary;
+      color: $green-dark;
     }
 
     &::after {
@@ -80,7 +80,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background-color: $color-primary;
+      background-color: $green-dark;
       transition: width $transition-normal;
     }
 
@@ -96,7 +96,7 @@
   border: none;
   cursor: pointer;
   padding: $spacing-xs;
-  color: $color-dark;
+  color: $green-dark;
 
   @include mobile {
     display: block;

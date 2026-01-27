@@ -1,0 +1,86 @@
+@use '@styles/abstracts/_variables' as *;
+@use '@styles/abstracts/_mixins' as *;
+
+.container {
+  @include flex-center;
+  min-height: 100vh;
+  padding: $spacing-lg;
+  background-color: $green-accent;
+}
+
+.card {
+  @include flex-center;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  padding: $spacing-2xl;
+  background: $white;
+  border-radius: 12px;
+  box-shadow: $shadow-lg;
+  text-align: center;
+}
+
+.icon {
+  color: #dc2626; // red-600
+  margin-bottom: $spacing-lg;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $green-dark;
+  margin-bottom: $spacing-md;
+}
+
+.message {
+  color: rgba($green-dark, 0.7);
+  margin-bottom: $spacing-lg;
+  line-height: 1.6;
+}
+
+.errorDetails {
+  width: 100%;
+  padding: $spacing-md;
+  background-color: rgba($green-dark, 0.05);
+  border-radius: 8px;
+  overflow: auto;
+  margin-bottom: $spacing-lg;
+  max-height: 300px;
+}
+
+.errorStack {
+  font-size: 0.875rem;
+  color: rgba($green-dark, 0.6);
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+
+.button {
+  @include flex-center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  background-color: $green-dark;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition-normal;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: rotate(-180deg);
+  }
+}

@@ -1,7 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import styles from './Contact.module.scss';
 import { FiInstagram } from 'react-icons/fi';
-import { WHATSAPP_NUMBER } from '../../lib/constants';
+import { WHATSAPP_NUMBER } from '@/constants';
 
 interface FormData {
   name: string;

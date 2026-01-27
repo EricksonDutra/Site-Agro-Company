@@ -1,9 +1,9 @@
-@use '@styles/variables' as *;
-@use '@styles/mixins' as *;
+@use '@styles/abstracts/_mixins' as *;
+@use '@styles/abstracts/_variables' as *;
 
 .footer {
-  background-color: $color-dark;
-  color: $color-white;
+  background-color: $green-dark;
+  color: $white;
   padding: $spacing-2xl 0 $spacing-lg;
 }
 
@@ -23,11 +23,11 @@
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: $spacing-md;
-    color: $color-accent;
+    color: $green-accent;
   }
 
   p {
-    color: rgba($color-white, 0.8);
+    color: rgba($white, 0.8);
     line-height: 1.6;
   }
 }
@@ -42,12 +42,12 @@
   }
 
   a {
-    color: rgba($color-white, 0.8);
+    color: rgba($white, 0.8);
     text-decoration: none;
     transition: color $transition-fast;
 
     &:hover {
-      color: $color-accent;
+      color: $green-accent;
     }
   }
 }
@@ -60,30 +60,30 @@
     @include flex-center;
     width: 40px;
     height: 40px;
-    background-color: rgba($color-white, 0.1);
+    background-color: rgba($white, 0.1);
     border-radius: 50%;
-    color: $color-white;
+    color: $white;
     transition: all $transition-fast;
 
     &:hover {
-      background-color: $color-primary;
+      background-color: $green-dark;
       transform: translateY(-3px);
     }
   }
 }
 
 .bottom {
-  border-top: 1px solid rgba($color-white, 0.1);
+  border-top: 1px solid rgba($white, 0.1);
   padding-top: $spacing-lg;
   text-align: center;
 
   p {
-    color: rgba($color-white, 0.6);
+    color: rgba($white, 0.6);
     font-size: 0.875rem;
   }
 
   a {
-    color: $color-accent;
+    color: $green-accent;
     text-decoration: none;
 
     &:hover {

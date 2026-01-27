@@ -1,6 +1,5 @@
+import { COMPANY_INFO } from '@/constants';
 import styles from './WhatsAppButton.module.scss';
-
-import { COMPANY_INFO } from '@/lib/constants';
 
 export default function WhatsAppButton() {
   return (

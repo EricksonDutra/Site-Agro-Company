@@ -1,14 +1,14 @@
-@use '@styles/variables' as *;
-@use '@styles/mixins' as *;
+@use '@styles/abstracts/_mixins' as *;
+@use '@styles/abstracts/_variables' as *;
 
 .hero {
   position: relative;
   min-height: 100vh;
   @include flex-center;
   background:
-    linear-gradient(135deg, rgba($color-primary, 0.9), rgba($color-secondary, 0.8)),
+    linear-gradient(135deg, rgba($green-dark, 0.9), rgba($green-accent, 0.8)),
     url('/images/hero-bg.jpg') center/cover no-repeat;
-  color: $color-white;
+  color: $white;
   text-align: center;
   padding: $spacing-2xl $spacing-md;
 }
@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-family: $font-heading;
+  font-family: $font-display;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
@@ -42,12 +42,12 @@
 
 .btnPrimary {
   @include button-base;
-  background-color: $color-white;
-  color: $color-primary;
+  background-color: $white;
+  color: $green-dark;
 
   &:hover {
-    background-color: $color-accent;
-    color: $color-white;
+    background-color: $green-accent;
+    color: $white;
     transform: translateY(-2px);
     box-shadow: $shadow-lg;
   }
@@ -56,12 +56,12 @@
 .btnSecondary {
   @include button-base;
   background-color: transparent;
-  color: $color-white;
-  border: 2px solid $color-white;
+  color: $white;
+  border: 2px solid $white;
 
   &:hover {
-    background-color: $color-white;
-    color: $color-primary;
+    background-color: $white;
+    color: $green-dark;
   }
 }
 

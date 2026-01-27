@@ -57,3 +57,11 @@
   border: none;
   text-decoration: none;
 }
+
+@mixin section-padding {
+  padding: $spacing-3xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-4xl 0;
+  }
+}

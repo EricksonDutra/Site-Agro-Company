@@ -1,4 +1,4 @@
-import { COMPANY_INFO, PILLARS } from '@/lib/constants';
+import { COMPANY_INFO, PILLARS } from '@/constants';
 import styles from './Pillars.module.scss';
 
 export default function Pillars() {
