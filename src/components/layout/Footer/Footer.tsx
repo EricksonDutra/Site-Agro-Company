@@ -1,6 +1,6 @@
 import styles from './Footer.module.scss';
 import { FiMapPin, FiMail, FiPhone, FiInstagram } from 'react-icons/fi';
-import { NAV_LINKS } from '@/lib/constants';
+import { NAV_LINKS } from '@/constants';
 
 const logosvg = '/images/logosvg.svg';
 

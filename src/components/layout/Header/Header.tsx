@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import styles from './Header.module.scss';
-
-const navLinks = [
-  { label: 'Início', href: '#home' },
-  { label: 'Sobre', href: '#about' },
-  { label: 'Serviços', href: '#services' },
-  { label: 'Contato', href: '#contact' },
-];
+import { NAV_LINKS } from '@/constants';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +30,7 @@ export default function Header() {
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
