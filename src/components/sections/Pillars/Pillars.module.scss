@@ -1,0 +1,149 @@
+@use '../../styles/variables' as *;
+
+.pillars {
+  @include section-padding;
+  background: $ivory;
+}
+
+.sectionTitle {
+  text-align: center;
+  color: $green-dark;
+  margin-bottom: $spacing-md;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: $gold;
+  margin: 0 auto $spacing-3xl;
+  border-radius: $radius-full;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  border: 2px solid transparent;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-xl;
+    border-color: $gold;
+
+    .imageWrapper img {
+      transform: scale(1.05);
+    }
+
+    .imageOverlay {
+      opacity: 0.3;
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+  }
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, $green-dark 100%);
+  opacity: 0.2;
+  transition: opacity $transition-normal;
+}
+
+.content {
+  padding: $spacing-xl;
+  text-align: center;
+
+  h3 {
+    color: $green-dark;
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $gray-dark;
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+  }
+}
+
+// Manifesto Quote
+.manifesto {
+  text-align: center;
+  margin-top: $spacing-3xl;
+  padding: $spacing-xl;
+  background: $white;
+  border-radius: $radius-lg;
+  border-left: 4px solid $gold;
+  box-shadow: $shadow-sm;
+
+  p {
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    font-style: italic;
+    color: $green-dark;
+    margin: 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-2xl;
+    }
+  }
+}
+
+// WhatsApp CTA
+.ctaWrapper {
+  text-align: center;
+  margin-top: $spacing-2xl;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-xl;
+  background: #25d366;
+  color: $white;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  border-radius: $radius-md;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(#25d366, 0.35);
+  }
+}
+
+.whatsappIcon {
+  width: 22px;
+  height: 22px;
+}
