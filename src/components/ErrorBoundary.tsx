@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils';
 import { AlertTriangle, RotateCcw } from 'lucide-react';
 import { Component, ErrorInfo, ReactNode } from 'react';
 import styles from './ErrorBoundary.module.scss';
@@ -51,7 +50,8 @@ class ErrorBoundary extends Component<Props, State> {
               </div>
             )}
 
-            <button onClick={this.handleReload} className={cn(styles.button)} type="button">
+            <button onClick={this.handleReload} className={styles.button} type="button">
+              {/* ← REMOVIDO cn() */}
               <RotateCcw size={16} />
               Recarregar página
             </button>

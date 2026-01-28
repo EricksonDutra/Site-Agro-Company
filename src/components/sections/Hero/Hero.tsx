@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import styles from './Hero.module.scss';
 import { HERO_SLIDES } from '@/constants';
-
 interface Slide {
   id: number;
   image: string;
@@ -36,7 +35,7 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [nextSlide]);
 
-  const currentSlide = SLIDES[currentIndex];
+  const currentSlide = SLIDES[currentIndex]!;
 
   return (
     <section id="home" className={styles.hero} aria-label="Banner principal">
@@ -55,11 +54,11 @@ export default function Hero() {
 
       {/* Content */}
       <div className={`container ${styles.content}`}>
-        <div className={styles.textWrapper} key={currentSlide!.id}>
-          <span className={styles.subtitle}>{currentSlide!.subtitle}</span>
-          <h1 className={styles.title}>{currentSlide!.title}</h1>
+        <div className={styles.textWrapper} key={currentSlide.id}>
+          <span className={styles.subtitle}>{currentSlide.subtitle}</span>
+          <h1 className={styles.title}>{currentSlide.title}</h1>
           <div className={styles.divider} />
-          <p className={styles.description}>{currentSlide!.description}</p>
+          <p className={styles.description}>{currentSlide.description}</p>
           <a href="#contact" className={styles.cta}>
             Fale com um especialista
           </a>

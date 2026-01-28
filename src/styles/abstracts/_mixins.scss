@@ -1,61 +1,32 @@
-@use 'variables' as *;
+@use '@styles/abstracts/_variables' as *;
+// ============================================
+// MIXINS
+// ============================================
 
-// Responsividade
-@mixin mobile {
-  @media (max-width: #{$breakpoint-md - 1px}) {
-    @content;
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 0 $container-padding-md;
   }
-}
 
-@mixin tablet {
-  @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
   @media (min-width: $breakpoint-lg) {
-    @content;
+    padding: 0 $container-padding-lg;
   }
 }
 
-// Flexbox
 @mixin flex-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin flex-between {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-}
-
-// Container
-@mixin container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 $spacing-md;
-
-  @include desktop {
-    padding: 0 $spacing-xl;
-  }
-}
-
-// Botão base
-@mixin button-base {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: $spacing-sm $spacing-lg;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all $transition-normal;
-  border: none;
-  text-decoration: none;
 }
 
 @mixin section-padding {
@@ -63,5 +34,104 @@
 
   @media (min-width: $breakpoint-md) {
     padding: $spacing-4xl 0;
+  }
+}
+
+@mixin gold-underline {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: $gold;
+    border-radius: $radius-full;
+  }
+}
+
+@mixin card-hover {
+  transition:
+    transform $transition-normal,
+    box-shadow $transition-normal,
+    border-color $transition-normal;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-color: $gold;
+  }
+}
+
+@mixin button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  background: $green-dark;
+  color: $white;
+  font-family: $font-body;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition:
+    background $transition-normal,
+    transform $transition-normal,
+    box-shadow $transition-normal;
+
+  &:hover {
+    background: $green-dark-2;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin button-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  background: $gold;
+  color: $green-dark;
+  font-family: $font-body;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition:
+    background $transition-normal,
+    transform $transition-normal,
+    box-shadow $transition-normal;
+
+  &:hover {
+    background: $gold-light;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin link-underline {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $gold;
+    transition: width $transition-normal;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 }

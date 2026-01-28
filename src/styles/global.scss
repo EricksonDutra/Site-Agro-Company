@@ -1,6 +1,5 @@
 // Abstracts
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
+@use '@styles/abstracts/_variables' as *;
 
 // Base
 @use 'base/reset';
@@ -9,20 +8,15 @@
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-// Root variables para CSS nativo
-:root {
-  --green-dark: $green-dark;
-  // --color-secondary: $color-secondary;
-  --green-accent: $green-accent;
-}
-
 // Estilos globais
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Playfair Display', Georgia, serif;
-  line-height: 1.6;
-  color: --green-dark;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $text-dark;
+  background: $white;
 }
