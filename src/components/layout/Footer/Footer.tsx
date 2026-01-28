@@ -88,7 +88,7 @@ export default function Footer() {
           <span style={{ fontSize: '0.75rem', opacity: 0.6, marginTop: '5px' }}>
             Desenvolvido por:{' '}
             <a
-              href="https://www.linkedin.com/in/erickson-dutra-dev/"
+              href="https://ericksondutra.cloud"
               target="_blank"
               rel="noopener noreferrer"
               style={{
