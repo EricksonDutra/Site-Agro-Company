@@ -154,10 +154,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 - GitHub: [@EricksonDutra](https://github.com/EricksonDutra)
 - Email: ericksond10@gmail.com
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
-
 ---
 
 ⭐ Se este projeto foi útil, considere dar uma estrela no repositório!
