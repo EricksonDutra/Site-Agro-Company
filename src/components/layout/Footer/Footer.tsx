@@ -63,7 +63,7 @@ export default function Footer() {
 
           <p>
             <FiMapPin className={styles.icon} />
-            <span>Rua Mar Caspio, 208 - Campo Grande – MS - Brasil</span>
+            <span>Rua Mar Cáspio, 208 - Campo Grande – MS - Brasil</span>
           </p>
 
           <p>

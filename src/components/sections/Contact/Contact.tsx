@@ -67,7 +67,7 @@ ${form.message}`;
                 <span className={styles.icon}>📍</span>
                 <div>
                   <strong>Localização</strong>
-                  <p>Rua Mar Caspio, 208 - Campo Grande – MS - Brasil</p>
+                  <p>Rua Mar Cáspio, 208 - Campo Grande – MS - Brasil</p>
                 </div>
               </div>
               <div className={styles.contactItem}>

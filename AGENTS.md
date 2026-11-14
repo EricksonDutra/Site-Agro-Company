@@ -145,7 +145,7 @@ Atualmente, a página `Home` renderiza as seções na seguinte ordem:
 ### Dados Institucionais Vigentes (Validados pelo Cliente)
 Qualquer alteração ou referência a dados de contato e credenciais deve respeitar exatamente os valores abaixo (presentes em `Contact.tsx` e `Footer.tsx`):
 
-- **Endereço:** `Rua Mar Caspio, 208 - Campo Grande – MS - Brasil`
+- **Endereço:** `Rua Mar Cáspio, 208 - Campo Grande – MS - Brasil`
 - **Telefones:** `(67) 99821-4438` / `(67) 98115-4023`
 - **WhatsApp Principal (envio de formulário e botão flutuante):** `5567998214438`
 - **E-mail:** `falecomagrocompany@gmail.com`
