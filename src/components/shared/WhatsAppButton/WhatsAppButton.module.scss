@@ -14,7 +14,9 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(#25d366, 0.4);
-  transition: all $transition-normal;
+  transition:
+    transform $transition-normal,
+    box-shadow $transition-normal;
 
   &:hover {
     transform: scale(1.1);

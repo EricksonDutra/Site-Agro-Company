@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import styles from './Hero.module.scss';
 import { HERO_SLIDES } from '@/constants';
 interface Slide {
@@ -14,25 +14,71 @@ const SLIDE_INTERVAL = 6000; // 6 seconds
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const goToSlide = useCallback(
-    (index: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 600);
-    },
-    [isAnimating]
+  const [loadedSlides, setLoadedSlides] = useState<boolean[]>(() =>
+    SLIDES.map((_, index) => index === 0)
   );
+  const isAnimatingRef = useRef(false);
+  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const goToSlide = useCallback((index: number) => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    setLoadedSlides((prev) => {
+      if (prev[index]) return prev;
+      const next = [...prev];
+      next[index] = true;
+      return next;
+    });
+    setCurrentIndex(index);
+
+    if (animationTimeoutRef.current) {
+      clearTimeout(animationTimeoutRef.current);
+    }
+    animationTimeoutRef.current = setTimeout(() => {
+      isAnimatingRef.current = false;
+    }, 600);
+  }, []);
 
   const nextSlide = useCallback(() => {
-    goToSlide((currentIndex + 1) % SLIDES.length);
-  }, [currentIndex, goToSlide]);
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    setCurrentIndex((prev) => {
+      const nextIndex = (prev + 1) % SLIDES.length;
+      setLoadedSlides((loaded) => {
+        if (loaded[nextIndex]) return loaded;
+        const updated = [...loaded];
+        updated[nextIndex] = true;
+        return updated;
+      });
+      return nextIndex;
+    });
+
+    if (animationTimeoutRef.current) {
+      clearTimeout(animationTimeoutRef.current);
+    }
+    animationTimeoutRef.current = setTimeout(() => {
+      isAnimatingRef.current = false;
+    }, 600);
+  }, []);
+
+  // Preload remaining hero slides after initial page load / idle time so LCP (hero1.webp) gets full bandwidth
+  useEffect(() => {
+    const preloadRemaining = () => {
+      setLoadedSlides(SLIDES.map(() => true));
+    };
+
+    const timer = setTimeout(preloadRemaining, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(nextSlide, SLIDE_INTERVAL);
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      if (animationTimeoutRef.current) {
+        clearTimeout(animationTimeoutRef.current);
+      }
+    };
   }, [nextSlide]);
 
   const currentSlide = SLIDES[currentIndex]!;
@@ -44,7 +90,7 @@ export default function Hero() {
         <div
           key={slide.id}
           className={`${styles.slide} ${index === currentIndex ? styles.active : ''}`}
-          style={{ backgroundImage: `url(${slide.image})` }}
+          style={loadedSlides[index] ? { backgroundImage: `url(${slide.image})` } : undefined}
           aria-hidden={index !== currentIndex}
         />
       ))}

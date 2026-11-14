@@ -4,6 +4,8 @@
 .contact {
   @include section-padding;
   background: $white;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 .wrapper {
@@ -110,7 +112,9 @@
     font-family: $font-body;
     font-size: $font-size-base;
     color: $text-dark;
-    transition: all $transition-normal;
+    transition:
+      border-color $transition-normal,
+      box-shadow $transition-normal;
 
     &::placeholder {
       color: $gray-medium;
@@ -154,7 +158,10 @@
   border: none;
   border-radius: $radius-md;
   cursor: pointer;
-  transition: all $transition-normal;
+  transition:
+    background-color $transition-normal,
+    transform $transition-normal,
+    box-shadow $transition-normal;
   margin-top: $spacing-md;
 
   &:hover:not(:disabled) {

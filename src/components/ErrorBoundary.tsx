@@ -1,4 +1,4 @@
-import { AlertTriangle, RotateCcw } from 'lucide-react';
+import { FiAlertTriangle, FiRotateCcw } from 'react-icons/fi';
 import { Component, ErrorInfo, ReactNode } from 'react';
 import styles from './ErrorBoundary.module.scss';
 
@@ -36,7 +36,7 @@ class ErrorBoundary extends Component<Props, State> {
       return (
         <div className={styles.container}>
           <div className={styles.card}>
-            <AlertTriangle size={48} className={styles.icon} />
+            <FiAlertTriangle size={48} className={styles.icon} />
 
             <h2 className={styles.title}>Oops! Algo deu errado</h2>
 
@@ -51,8 +51,7 @@ class ErrorBoundary extends Component<Props, State> {
             )}
 
             <button onClick={this.handleReload} className={styles.button} type="button">
-              {/* ← REMOVIDO cn() */}
-              <RotateCcw size={16} />
+              <FiRotateCcw size={16} />
               Recarregar página
             </button>
           </div>

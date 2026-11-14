@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss';
-import { FiMapPin, FiMail, FiPhone, FiInstagram } from 'react-icons/fi';
+import { FiMapPin, FiMail, FiPhone, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import { NAV_LINKS } from '@/constants';
 
 const logosvg = '/images/logosvg.svg';
@@ -10,8 +10,9 @@ const CREDENTIALS = [
   'Pós-graduação em Agronegócio, Gestão Empresarial e Inteligência Competitiva',
   'Técnico em Administração e Gestão Financeira voltada ao Agronegócio',
   'Técnico em Contabilidade no Agronegócio',
-  'Certificações FEBRABAN FBB-410 / FBB-420 - (Agronegócio Crédito Rural), (Correspondente bancário + LGPD) ANBIMA CPA-20',
-  '(Produtos de investimento para clientes dos segmentos varejo alta renda, private, corporate e investidores institucionais em agências bancárias ou em plataformas de atendimento)',
+  'Certificação FEBRABAN FBB-100 - Correspondente bancário + LGPD',
+  'Certificação FEBRABAN FBB-420 - Agronegócio Crédito Rural',
+  'Certificação ANBIMA C-PRO R - Profissional de Investimentos com selo de excelência ANBIMA, focado no relacionamento e gestão de investimentos para Alta Renda, Private e Corporate, investidores institucionais em agências bancárias ou em plataformas de atendimento',
   '+7 anos de experiência em bancos e instituições financeiras',
 ];
 
@@ -24,7 +25,14 @@ export default function Footer() {
         {/* Brand Column */}
         <div className={styles.footerBrand}>
           <div className={styles.footerLogo}>
-            <img src={logosvg} alt="Agro Company" width={140} height={35} />
+            <img
+              src={logosvg}
+              alt="Agro Company"
+              width={240}
+              height={227}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <p>Ajudamos quem produz a crescer com inteligência, técnica e sustentabilidade.</p>
         </div>
@@ -55,27 +63,39 @@ export default function Footer() {
 
           <p>
             <FiMapPin className={styles.icon} />
-            <span>Campo Grande – MS</span>
+            <span>Rua Mar Caspio, 208 - Campo Grande – MS - Brasil</span>
           </p>
 
           <p>
             <FiMail className={styles.icon} />
-            <a href="mailto:augusto.agrocompany@gmail.com">augusto.agrocompany@gmail.com</a>
+            <a href="mailto:falecomagrocompany@gmail.com">falecomagrocompany@gmail.com</a>
           </p>
 
           <p>
             <FiPhone className={styles.icon} />
-            <a href="tel:+5567998214438">(67) 99821-4438</a>
+            <a href="tel:+5567998214438">(67) 99821-4438</a> /{' '}
+            <a href="tel:+5567981154023">(67) 98115-4023</a>
           </p>
 
           <p>
             <FiInstagram className={styles.icon} />
             <a
-              href="https://www.instagram.com/a.grocompany/"
+              href="https://www.instagram.com/agrocompany.assessoria/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              @a.grocompany
+              @agrocompany.assessoria
+            </a>
+          </p>
+
+          <p>
+            <FiLinkedin className={styles.icon} />
+            <a
+              href="http://linkedin.com/in/augusto-alvarenga-2064b2b3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/augusto-alvarenga-2064b2b3
             </a>
           </p>
         </div>

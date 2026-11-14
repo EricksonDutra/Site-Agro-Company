@@ -5,14 +5,7 @@
 @use 'base/reset';
 @use 'base/typography';
 
-// Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
 // Estilos globais
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: $font-body;
   font-size: $font-size-base;

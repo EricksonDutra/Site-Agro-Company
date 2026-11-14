@@ -4,8 +4,9 @@ import About from '@/components/sections/About/About';
 import Contact from '@/components/sections/Contact/Contact';
 import Hero from '@/components/sections/Hero/Hero';
 import Identity from '@/components/sections/Identity/Identity';
-import Pillars from '@/components/sections/Pillars/Pillars';
-import Services from '@/components/sections/Services/Services';
+import Maintenance from '@/components/sections/Maintenance/maintenance';
+// import Pillars from '@/components/sections/Pillars/Pillars';
+// import Services from '@/components/sections/Services/Services';
 import WhatsAppButton from '@/components/shared/WhatsAppButton/WhatsAppButton';
 
 export default function Home() {
@@ -16,8 +17,8 @@ export default function Home() {
         <Hero />
         <About />
         <Identity />
-        <Pillars />
-        <Services />
+        <Maintenance />
+        {/* <Pillars /> */}
         <Contact />
       </main>
       <Footer />

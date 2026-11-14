@@ -8,15 +8,17 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 50;
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   const closeMobileMenu = () => {
@@ -28,7 +30,14 @@ export default function Header() {
       <div className={`container ${styles.content}`}>
         {/* Logo */}
         <a href="#home" className={styles.logo}>
-          <img src={'/images/logo.png'} alt="Agro Company - Assessoria Financeira" />
+          <img
+            src="/images/logo.png"
+            alt="Agro Company - Assessoria Financeira"
+            width={104}
+            height={100}
+            fetchPriority="high"
+            decoding="async"
+          />
         </a>
 
         {/* Desktop Navigation */}

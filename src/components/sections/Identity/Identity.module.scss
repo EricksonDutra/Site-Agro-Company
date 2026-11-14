@@ -53,7 +53,10 @@
   border-radius: $radius-lg;
   padding: $spacing-xl;
   text-align: center;
-  transition: all $transition-normal;
+  transition:
+    background-color $transition-normal,
+    border-color $transition-normal,
+    transform $transition-normal;
 
   &:hover {
     background: rgba($white, 0.1);
@@ -90,7 +93,9 @@
   align-items: center;
   justify-content: center;
   color: $gold;
-  transition: all $transition-normal;
+  transition:
+    background-color $transition-normal,
+    color $transition-normal;
 
   svg {
     width: 28px;

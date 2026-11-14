@@ -1,6 +1,6 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import styles from './Contact.module.scss';
-import { FiInstagram } from 'react-icons/fi';
+import { FiInstagram, FiLinkedin } from 'react-icons/fi';
 import { WHATSAPP_NUMBER } from '@/constants';
 
 interface FormData {
@@ -67,7 +67,7 @@ ${form.message}`;
                 <span className={styles.icon}>📍</span>
                 <div>
                   <strong>Localização</strong>
-                  <p>Campo Grande – MS</p>
+                  <p>Rua Mar Caspio, 208 - Campo Grande – MS - Brasil</p>
                 </div>
               </div>
               <div className={styles.contactItem}>
@@ -75,7 +75,8 @@ ${form.message}`;
                 <div>
                   <strong>Telefone</strong>
                   <p>
-                    <a href="tel:+5567998214438">(67) 99821-4438</a>
+                    <a href="tel:+5567998214438">(67) 99821-4438</a> /{' '}
+                    <a href="tel:+5567981154023">(67) 98115-4023</a>
                   </p>
                 </div>
               </div>
@@ -84,7 +85,7 @@ ${form.message}`;
                 <div>
                   <strong>E-mail</strong>
                   <p>
-                    <a href="mailto:augusto.agrocompany@gmail.com">augusto.agrocompany@gmail.com</a>
+                    <a href="mailto:falecomagrocompany@gmail.com">falecomagrocompany@gmail.com</a>
                   </p>
                 </div>
               </div>
@@ -96,11 +97,28 @@ ${form.message}`;
                   <strong>Instagram</strong>
                   <p>
                     <a
-                      href="https://www.instagram.com/a.grocompany/"
+                      href="https://www.instagram.com/agrocompany.assessoria/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      @a.grocompany
+                      @agrocompany.assessoria
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className={styles.contactItem}>
+                <span className={styles.icon}>
+                  <FiLinkedin />
+                </span>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <p>
+                    <a
+                      href="http://linkedin.com/in/augusto-alvarenga-2064b2b3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      linkedin.com/in/augusto-alvarenga-2064b2b3
                     </a>
                   </p>
                 </div>

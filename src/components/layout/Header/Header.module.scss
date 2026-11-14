@@ -8,7 +8,10 @@
   right: 0;
   z-index: $z-fixed;
   padding: $spacing-md 0;
-  transition: all $transition-normal;
+  transition:
+    background-color $transition-normal,
+    padding $transition-normal,
+    box-shadow $transition-normal;
 
   &.scrolled {
     background: rgba($green-dark, 0.95);
@@ -105,7 +108,10 @@
   color: $green-dark;
   font-weight: $font-weight-semibold;
   border-radius: $radius-md;
-  transition: all $transition-normal;
+  transition:
+    background-color $transition-normal,
+    transform $transition-normal,
+    box-shadow $transition-normal;
 
   &:hover {
     background: $gold-light;

@@ -34,7 +34,14 @@ export default function About() {
 
         <div className={styles.imageWrapper}>
           <div className={styles.imageContainer}>
-            <img src={logoSvg} alt="Agro Company - Assessoria Financeira para o Agronegócio" />
+            <img
+              src={logoSvg}
+              alt="Agro Company - Assessoria Financeira para o Agronegócio"
+              width={300}
+              height={284}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className={styles.decorative} aria-hidden="true" />
         </div>

@@ -5,6 +5,8 @@
   background: $green-dark;
   color: $text-light;
   padding-top: 1.2rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 450px;
 }
 
 .footerGrid {
