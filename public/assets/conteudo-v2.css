@@ -1,0 +1,40 @@
+/* Conteúdo original V2 nos componentes do modelo visual aprovado. */
+.arrow-icon{display:inline-block;flex:none;vertical-align:middle;width:15px;height:15px}
+.service-tagline{font-family:var(--sans);font-size:14px;font-weight:600;line-height:1.55;color:var(--forest2);margin:0 0 14px}
+.service-card p{max-width:none}
+.service-card .link-arrow{align-self:flex-start}
+.trust-grid strong{max-width:285px}
+.trust-grid small{max-width:285px;line-height:1.6;padding-right:12px}
+.image-note{max-width:310px}
+.scope-list{margin-top:0}
+.scope-list li:first-child{padding-top:0}
+.section-cream>.container>.scope-list{columns:2;column-gap:55px}
+.section-cream>.container>.scope-list li{break-inside:avoid}
+.need-grid p{font-size:14px;line-height:1.8;margin:14px 0}
+.need-grid span{display:flex;align-items:center;gap:12px;font-weight:600}
+.audience-grid>div>h3{margin-bottom:20px}
+.step-card{background:var(--cream)}
+.leadership-box h2{margin-bottom:26px}
+.leadership-box h3{margin:22px 0}
+.contact-panel h3{font-size:24px;margin-bottom:20px}
+.contact-method p{margin:0}
+.contact-method strong{display:inline-block;margin-bottom:6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#997e47}
+.form-panel{align-self:start}
+.form-panel .aci-form{margin:0}
+.form-field:first-child label{margin-top:0}
+.form-consent label{display:flex;align-items:flex-start;gap:12px;font-weight:400;line-height:1.65}
+.form-panel .form-consent input{width:17px;height:17px;min-height:17px;padding:0;flex:0 0 17px;margin:4px 0 0;accent-color:var(--forest)}
+.form-panel .form-note{font-size:11px;line-height:1.8;margin-top:17px;color:#68796a}
+.form-feedback:not([hidden]){font-size:13px;margin-top:18px;padding:16px;border-left:2px solid var(--gold);background:white}
+.form-feedback a{color:var(--forest);text-decoration:underline;font-weight:600}
+.prototype-label{color:#84988b;font-size:10px}
+.footer-bottom{flex-wrap:wrap}
+.home-hero-content>.eyebrow{max-width:100%}
+.home-hero .hero-kicker{line-height:1.9}
+.hero-side-label{pointer-events:none}
+.nav-dropdown-menu[hidden]{display:none!important}
+.nav-dropdown.is-open .nav-dropdown-menu{display:block}
+@media(max-width:780px){.section-cream>.container>.scope-list{columns:1}.image-note{max-width:280px}}
+@media(max-width:520px){.home-hero-image{background-position:center,57% center}.image-note{max-width:260px}.form-panel input,.form-panel select,.form-panel textarea{font-size:16px}.interior-grid,.split-grid,.two-column-copy,.audience-grid,.contact-grid{min-width:0}.interior-text,.split-copy,.contact-panel,.form-panel{min-width:0}.service-card h3{overflow-wrap:break-word}}
+
+.pillar>a:after{content:none}.pillar>a .arrow-icon{margin-left:6px;color:#aa975f}
